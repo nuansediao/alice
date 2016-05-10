@@ -1,0 +1,86 @@
+@charset 'UTF-8';
+/**
+ * 
+ * @authors ly
+ * @date    2016-03-18 11:29
+ */
+/*移动端配置*/
+/*reset*/
+html {
+  -ms-touch-action: none;
+}
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form {
+  font-family: 'microsoft yahei', Tahoma, Arial, 'Helvetica Neue', 'Hiragino Sans GB';
+  margin: 0;
+}
+em,
+input {
+  font-family: Tahoma, Arial, 'Helvetica Neue', 'Hiragino Sans GB';
+  color: #333;
+}
+input {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  outline: none;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+a {
+  display: inline-block;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* clearfix 清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  /* 1 */
+  display: table;
+  content: ' ';
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
+.demo {
+  margin: 0 30px;
+  background-color: #EBEBEA;
+  border: 1px solid #5F5F5F;
+  font-size: .1rem;
+}
+.box {
+  height: 50px;
+  margin: 30px 20px;
+  background-color: #F5F0E2;
+  line-height: 50px;
+}
