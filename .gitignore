@@ -8,4 +8,4 @@ node_modules
 #!foo.html
 # 忽略所有.o和 .a文件.
 #*.[oa]
-src
+drc
