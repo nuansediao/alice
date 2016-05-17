@@ -60,9 +60,6 @@ a {
   *zoom: 1;
 }
 .demo {
-  margin: 0 30px;
-  background-color: #EBEBEA;
-  border: 1px solid #5F5F5F;
   font-size: .1rem;
 }
 .box {
@@ -82,8 +79,10 @@ a {
 }
 
 .demo{
+  border-radius: 50%;
+  width:100px;
   height: 100px;
-  width: 100px;
+  background-color: #5ef5ff;
   position: absolute;
   top:50%;
   left: 50%;
