@@ -23,6 +23,9 @@ var gulp = require('gulp'),
   size = require('postcss-size'),
   // verthorz = require('postcss-verthorz'),
   colorShort = require('postcss-color-short');
+	autoprefixer = require('autoprefixer'),
+	cssnext = require('cssnext'),
+	precss = require('precss');
 
 //img处理
 gulp.task('img',function(){
@@ -55,7 +58,10 @@ gulp.task('css', function () {
       position,
       size,
       // verthorz,
-      colorShort
+      colorShort,
+			autoprefixer,
+  		cssnext,
+  		precss
   ];
   return gulp.src('./drc/css/*.css')
     .pipe(postcss(processors))

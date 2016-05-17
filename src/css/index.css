@@ -9,22 +9,11 @@
 html {
   -ms-touch-action: none;
 }
-body,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-form {
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form {
   font-family: 'microsoft yahei', Tahoma, Arial, 'Helvetica Neue', 'Hiragino Sans GB';
   margin: 0;
 }
-em,
-input {
+em, input {
   font-family: Tahoma, Arial, 'Helvetica Neue', 'Hiragino Sans GB';
   color: #333;
 }
@@ -41,8 +30,7 @@ a {
   color: #333;
   outline: none;
 }
-ol,
-ul {
+ol, ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -55,8 +43,7 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /* clearfix 清除浮动*/
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   /* 1 */
   display: table;
   content: ' ';
@@ -87,15 +74,20 @@ a {
 }
 .box li {
   padding-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: 1px solid #E0DFE2;
   letter-spacing: 0;
 }
 
 .demo{
+  height: 100px;
+  width: 100px;
   position: absolute;
   top:50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
