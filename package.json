@@ -1,0 +1,39 @@
+{
+  "name": "alice",
+  "version": "0.0.1",
+  "description": "test PostCSS gulp plugin",
+  "keywords": [
+    "gulpplugin",
+    "PostCSS",
+    "css"
+  ],
+  "author": "damo",
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^5.0.0",
+    "gulp": "~3.8.10"
+  },
+  "devDependencies": {
+    "gulp-postcss": "^6.0.1",
+    "postcss-alias": "^0.2.2",
+    "postcss-all-link-colors": "^1.0.1",
+    "postcss-center": "^1.0.0",
+    "postcss-circle": "^1.0.0",
+    "postcss-clearfix": "^1.0.0",
+    "postcss-color-short": "^0.2.2",
+    "postcss-crip": "^2.0.0",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-position": "^0.4.0",
+    "postcss-size": "^1.0.0",
+    "postcss-triangle": "^1.0.1",
+    "postcss-verthorz": "^0.6.2"
+  },
+  "main": "hehe",
+  "scripts": {
+    "test": "nimi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "dsd"
+  }
+}
