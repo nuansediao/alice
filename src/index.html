@@ -13,19 +13,21 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="shortcut icon" href="http://s2.pstatp.com/image/toutiao_mobile/short_cut_icon.png" type="image/x-icon">
-</head>
-<body>
 	
-	<img src="img/wb_icon.png" height="83" width="83" alt="" onclick="this.style.backgroundColor='#'+ (Math.random()+ '').slice(-6)">
-	<div class="demo">
-		sdsaddsd
-	</div>
-	<ul class="box">
-		<li><a href="">首页</a></li>
-		<li><a href="" class="">菜单</a></li>
-	</ul>
+</head>
 
-	<script src="js/zepto.min.js"></script>
-<script src="js/index.min.js"></script>
+<body>
+    <div class="demo">
+        <ul>
+            <li v-for="item in dataList" track-by="$index">
+                <span>{{item}}</span>
+            </li>
+        </ul>
+        <input type="text" v-model="content | verify">
+        <button v-on:click="addDataList">添加</button>
+    </div>
+    <script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+    <!-- <script src="http://localhost:8888/target/target-script-min.js#anonymous"></script> -->
 </body>
 </html>

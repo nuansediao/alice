@@ -73,8 +73,8 @@ gulp.task('js',function(){
 	var jsDrc = 'drc/js/*.js';
 		jsSrc = 'src/js/';
 	gulp.src(jsDrc)
-		.pipe(uglify())
-		.pipe(rename({suffix:'.min'}))
+		// .pipe(uglify())
+		// .pipe(rename({suffix:'.min'}))
 		.pipe(gulp.dest(jsSrc));
 });
 

@@ -59,34 +59,17 @@ a {
 .clearfix {
   *zoom: 1;
 }
-.demo {
-  font-size: .1rem;
-}
-.box {
-  height: 50px;
-  margin: 30px 20px;
-  background-color: #F5F0E2;
-  line-height: 50px;
-  letter-spacing: -6px;
-}
-.box li {
-  padding-right: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid #E0DFE2;
-  letter-spacing: 0;
-}
+
+
+
 
 .demo{
-  border-radius: 50%;
-  width:100px;
-  height: 100px;
-  background-color: #5ef5ff;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin: 10px;
+  padding: 10px;
+  background: #ABF9FF;
+}
+.but{
+  margin: 20px;
+  background: #FEDDFF;
+  outline: none;
 }
