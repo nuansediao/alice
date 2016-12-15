@@ -11,23 +11,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="apple-touch-icon-precomposed" href="http://s2.pstatp.com/r2/image/app/news_article_mobile.png">
 	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="shortcut icon" href="http://s2.pstatp.com/image/toutiao_mobile/short_cut_icon.png" type="image/x-icon">
-	
 </head>
-
 <body>
-    <div class="demo">
-        <ul>
-            <li v-for="item in dataList" track-by="$index">
-                <span>{{item}}</span>
-            </li>
-        </ul>
-        <input type="text" v-model="content | verify">
-        <button v-on:click="addDataList">添加</button>
-    </div>
-    <script src="js/vue.js"></script>
+	<div class="demo">
+		{{number}}
+        <img src="img/pikaqiu.jpg" alt="" style="display: none">
+        <button @click="isShow">点击</button>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/vue.js"></script>
 <script src="js/index.js"></script>
-    <!-- <script src="http://localhost:8888/target/target-script-min.js#anonymous"></script> -->
 </body>
 </html>

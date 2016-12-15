@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	fileinclude = require('gulp-file-include'),
 	postcss = require('gulp-postcss'),
 	gutil = require('gulp-util');
+    sass = require('gulp-sass');
 
 	//postcss的小插件
   alias = require('postcss-alias'),
@@ -36,6 +37,15 @@ gulp.task('img',function(){
 	 .pipe(gulp.dest(imgSrc));
 });
 
+//处理sass
+gulp.task('sass',function(){
+    var sassDrc = "drc/sass/**",
+        cssDrc = "drc/css/";
+        gulp.src(sassDrc)
+            .pipe(sass())
+            .pipe(gulp.dest(cssDrc));
+});
+
 
 //运行注解是彩色的
 gulp.task('default', function () {
@@ -47,7 +57,7 @@ gulp.task('default', function () {
 gulp.task('css', function () {
 	//安装postcss插件的地方
   var processors = [
-			alias,
+	  alias,
       crip,
       magician,
       triangle,
@@ -87,7 +97,7 @@ gulp.task('clean', function() {
 
 //默认运行程序
 gulp.task('default',['clean'],function(){
-	gulp.start('postcss','html','less','css','img','js');
+	gulp.start('postcss','html','sass','css','img','js');
 });
 
 // 静态服务器
@@ -116,7 +126,7 @@ gulp.task('html',function(){
 //监听任务，运行语句 gulp watch
 
 gulp.task('watch',['browser-sync'], function(){
-		gulp.start('css','html','img','js');
+		gulp.start('sass','css','html','img','js');
 
 	//监听html
 	gulp.watch('./drc/*.html',function(){
@@ -125,9 +135,14 @@ gulp.task('watch',['browser-sync'], function(){
 	});
 
 	//监听css
-	gulp.watch('./drc/css/**',function(){
+	gulp.watch('./drc/sass/**',function(){
+        gulp.run('sass');
 		gulp.run('css');
 	});
+    //监听css
+    gulp.watch('./drc/css/**',function(){
+        gulp.run('css');
+    });
 
 
 	//监听js

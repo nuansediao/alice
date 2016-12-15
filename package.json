@@ -14,12 +14,14 @@
     "gulp": "~3.8.10"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.5",
     "gulp-file-include": "^1.0.0",
     "gulp-imagemin": "^3.0.3",
     "gulp-minify-css": "^1.2.4",
     "gulp-postcss": "^6.0.1",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
+    "postcss": "^5.2.6",
     "postcss-alias": "^0.2.2",
     "postcss-all-link-colors": "^1.0.1",
     "postcss-center": "^1.0.0",
