@@ -31,6 +31,7 @@
     "postcss-crip": "^2.0.0",
     "postcss-font-magician": "^1.4.0",
     "postcss-position": "^0.4.0",
+    "postcss-selector-not": "^2.0.0",
     "postcss-size": "^1.0.0",
     "postcss-triangle": "^1.0.1",
     "postcss-verthorz": "^0.6.2",

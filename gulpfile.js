@@ -12,21 +12,21 @@ var gulp = require('gulp'),
     sass = require('gulp-sass');
 
 	//postcss的小插件
-  alias = require('postcss-alias'),
-  crip = require('postcss-crip'),
-  magician = require('postcss-font-magician'),
-  triangle = require('postcss-triangle'),
-  circle = require('postcss-circle'),
-  linkColors = require('postcss-all-link-colors'),
-  center = require('postcss-center'),
-  clearfix = require('postcss-clearfix'),
-  position = require('postcss-position'),
-  size = require('postcss-size'),
+  //alias = require('postcss-alias'),
+  //crip = require('postcss-crip'),
+  //magician = require('postcss-font-magician'),
+  //triangle = require('postcss-triangle'),
+  //circle = require('postcss-circle'),
+  //linkColors = require('postcss-all-link-colors'),
+  //center = require('postcss-center'),
+  //clearfix = require('postcss-clearfix'),
+  //position = require('postcss-position'),
+  //size = require('postcss-size'),
   // verthorz = require('postcss-verthorz'),
-  colorShort = require('postcss-color-short');
-	autoprefixer = require('autoprefixer'),
-	cssnext = require('cssnext'),
-	precss = require('precss');
+ // colorShort = require('postcss-color-short');
+	//autoprefixer = require('autoprefixer'),
+	//cssnext = require('cssnext'),
+	//precss = require('precss');
 
 //img处理
 gulp.task('img',function(){
@@ -56,26 +56,26 @@ gulp.task('default', function () {
 
 gulp.task('css', function () {
 	//安装postcss插件的地方
-  var processors = [
-	  alias,
-      crip,
-      magician,
-      triangle,
-      circle,
-      linkColors,
-      center,
-      clearfix,
-      position,
-      size,
-      // verthorz,
-      colorShort,
-			autoprefixer,
-  		cssnext,
-  		precss
-  ];
-  return gulp.src('./drc/css/*.css')
-    .pipe(postcss(processors))
-    .pipe(gulp.dest('./src/css/'));
+ //var processors = [
+//alias,
+ //    crip,
+ //    magician,
+ //    triangle,
+ //    circle,
+ //    linkColors,
+ //    center,
+ //    clearfix,
+ //    position,
+ //    size,
+ //    // verthorz,
+ //    colorShort,
+			//autoprefixer,
+ //		cssnext,
+ //		precss
+ //];
+    gulp.src('./drc/css/*.css')
+    //.pipe(postcss(processors))
+      .pipe(gulp.dest('./src/css/'));
 });
 
 //js处理
@@ -89,15 +89,28 @@ gulp.task('js',function(){
 });
 
 
+// json处理
+gulp.task('json',function(){
+    var jsonDrc = 'drc/json/*.json';
+    var jsonSrc = 'src/json/';
+    gulp.src(jsonDrc)
+        .pipe(gulp.dest(jsonSrc));
+})
+
+
+
+
+
+
 // 清空图片、样式、js
 gulp.task('clean', function() {
-    gulp.src(['./src/css', './src/js', './src/img','./src/*.html'], {read: false})
+    gulp.src(['./src/css', './src/js', './src/img','./src/*.html','./src/json'], {read: false})
         .pipe(clean());
 });
 
 //默认运行程序
 gulp.task('default',['clean'],function(){
-	gulp.start('postcss','html','sass','css','img','js');
+	gulp.start('postcss','html','sass','css','img','js','json');
 });
 
 // 静态服务器
@@ -154,5 +167,10 @@ gulp.task('watch',['browser-sync'], function(){
 	gulp.watch('./drc/img/**',function(){
 		gulp.run('img');
 	});
+
+    //监听json
+    gulp.watch('./drc/json/**',function(){
+        gulp.run('json');
+    });
 
 });
