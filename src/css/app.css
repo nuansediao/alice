@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*
+ * =========================================================
+ * @ filename : flex.scss
+ * @ explains : flex layout mixin; 目前支持flex,未做inline-flex
+ *
+ * @ email    : f2engineer@outlook.com
+ * @ author   : Pom
+ * ==========================================================
+ */
+/* line 103, ../sass/_index.scss */
+.dialog-content {
+  width: 7.5rem;
+  height: 5rem;
+  background: #000;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2; }
+
+/*# sourceMappingURL=app.css.map */

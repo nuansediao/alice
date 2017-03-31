@@ -8,8 +8,10 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	fileinclude = require('gulp-file-include'),
 	postcss = require('gulp-postcss'),
-	gutil = require('gulp-util');
-    sass = require('gulp-sass');
+	gutil = require('gulp-util'),
+  sass = require('gulp-scss'),
+  concat = require('gulp-concat');
+  compass = require('gulp-compass');
 
 	//postcss的小插件
   //alias = require('postcss-alias'),
@@ -37,13 +39,27 @@ gulp.task('img',function(){
 	 .pipe(gulp.dest(imgSrc));
 });
 
-//处理sass
-gulp.task('sass',function(){
-    var sassDrc = "drc/sass/**",
-        cssDrc = "drc/css/";
-        gulp.src(sassDrc)
-            .pipe(sass())
-            .pipe(gulp.dest(cssDrc));
+// //处理sass
+// gulp.task('sass',function(){
+//     var sassDrc = "drc/sass/*.scss",
+//         cssDrc = "drc/css/";
+//         gulp.src(sassDrc)
+//             .pipe(sass())
+//             .pipe(gulp.dest(cssDrc));
+// });
+
+//插入compass
+gulp.task('compass', function() {
+  gulp.src('drc/sass/*.scss') //來源路徑
+  .pipe(compass({ //這段內輸入config.rb的內容
+    css: 'drc/css/', //compass輸出位置
+    sass: 'drc/sass/', //sass來源路徑
+    sourcemap: true, //compass 1.0 sourcemap
+    style: 'expanded', //CSS壓縮格式，預設(nested)
+    comments: true, //是否要註解，預設(true)
+    // require: ['susy'] //額外套件 susy
+  }))
+ // .pipe(gulp.dest('app/assets/temp')); //輸出位置(非必要)
 });
 
 
@@ -88,6 +104,24 @@ gulp.task('js',function(){
 		.pipe(gulp.dest(jsSrc));
 });
 
+// //合并lib js代码
+// gulp.task('lib-js',function(){
+//   var libDrc = 'drc/lib/js/*.js',
+//       libSrc = 'src/js/';
+//   gulp.src(libDrc)
+//     .pipe(concat('lib.min.js'))
+//     .pipe(gulp.dest(libSrc));
+// })
+
+// //合并lib sass代码
+// gulp.task('lib-sass',function(){
+//   var libDrc = 'drc/lib/sass/*.scss',
+//       libSrc = 'drc/sass/';
+//   gulp.src(libDrc)
+//     .pipe(concat('lib.scss'))
+//     .pipe(gulp.dest(libSrc));
+// })
+
 
 // json处理
 gulp.task('json',function(){
@@ -110,7 +144,7 @@ gulp.task('clean', function() {
 
 //默认运行程序
 gulp.task('default',['clean'],function(){
-	gulp.start('postcss','html','sass','css','img','js','json');
+	gulp.start('html','compass','cssfs','img','js','json');
 });
 
 // 静态服务器
@@ -139,7 +173,7 @@ gulp.task('html',function(){
 //监听任务，运行语句 gulp watch
 
 gulp.task('watch',['browser-sync'], function(){
-		gulp.start('sass','css','html','img','js');
+		gulp.start('compass','css','html','img','js');
 
 	//监听html
 	gulp.watch('./drc/*.html',function(){
@@ -149,13 +183,13 @@ gulp.task('watch',['browser-sync'], function(){
 
 	//监听css
 	gulp.watch('./drc/sass/**',function(){
-        gulp.run('sass');
+        gulp.run('compass');
 		gulp.run('css');
 	});
-    //监听css
-    gulp.watch('./drc/css/**',function(){
-        gulp.run('css');
-    });
+  //监听css
+  gulp.watch('./drc/css/**',function(){
+      gulp.run('css');
+  });
 
 
 	//监听js

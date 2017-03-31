@@ -395,6 +395,78 @@
 
 
 
+// var img = $('.img-content').find('img')[0];
+// var main = $('.img-base64')[0];
+// img.crossOrigin = "anonymous";
+
+// function getImageBase64(img) {
+//     var canvas = document.createElement("canvas");
+//     canvas.width = img.width;
+//     canvas.height = img.height;
+
+//     var ctx = canvas.getContext("2d");
+//     ctx.drawImage(img, 0, 0, img.width, img.height);
+//     var ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();
+//     var dataURL = canvas.toDataURL("image/" + ext).replace("image/" + ext, "image/octet-stream");
+//     // img.setAttribute('crossOrigin', 'anonymous');  //前提是服务器支持跨域
+//     return dataURL;
+// }
+
+
+
+// $(main).append('<img src="" alt="">');
+
+// img.onload = function(){
+//    $(main).find('img').attr('src',getImageBase64(img));
+// };
+
+
+// var files = $('.label')[0];
+// var images;
+// files.onchange = function(e) {
+//     // // var data = e.target.files[0];
+//     // var data = $('input')[0].files[0];
+//     // var reader = new FileReader();
+//     // reader.readAsDataURL(data);
+//     // reader.onload = function() {
+//     //     $(main).find('img').attr('src', reader.result);
+//     // };
+//     images = $('input')[0].files[0];
+//     demo();
+
+// };
+// function demo() {
+//     images.name = 'http://avatar.csdn.net/F/3/7/1_linlzk.jpg';
+//     var reader = new FileReader();
+//     reader.readAsDataURL(images);
+//     reader.onload = function() {
+//         $(main).find('img').attr('src', reader.result);
+//     };
+// }
+
+// demo();
+
+
+
+//获取元素
+// document.getElementsByTagName();
+// document.getElementsByClassName();
+// document.getElementById();
+// document.querySelector();
+// document.querySelectorAll();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

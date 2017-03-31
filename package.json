@@ -1,50 +1,10 @@
 {
-  "name": "alice",
-  "version": "0.0.1",
-  "description": "test PostCSS gulp plugin",
-  "keywords": [
-    "gulpplugin",
-    "PostCSS",
-    "css"
-  ],
-  "author": "damo",
-  "license": "MIT",
-  "dependencies": {
-    "postcss": "^5.0.0",
-    "gulp": "~3.8.10"
-  },
   "devDependencies": {
-    "browser-sync": "^2.18.5",
-    "gulp-file-include": "^1.0.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-postcss": "^6.0.1",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "postcss": "^5.2.6",
-    "postcss-alias": "^0.2.2",
-    "postcss-all-link-colors": "^1.0.1",
-    "postcss-center": "^1.0.0",
-    "postcss-circle": "^1.0.0",
-    "postcss-clearfix": "^1.0.0",
-    "postcss-color-short": "^0.2.2",
-    "postcss-crip": "^2.0.0",
-    "postcss-font-magician": "^1.4.0",
-    "postcss-position": "^0.4.0",
-    "postcss-selector-not": "^2.0.0",
-    "postcss-size": "^1.0.0",
-    "postcss-triangle": "^1.0.1",
-    "postcss-verthorz": "^0.6.2",
-    "precss": "^1.4.0",
-    "spritesmith": "^3.1.0",
-    "vue": "^2.0.3"
-  },
-  "main": "hehe",
-  "scripts": {
-    "test": "nimi"
-  },
-  "repository": {
-    "type": "git",
-    "url": "dsd"
+    "glob": "^7.1.1",
+    "globby": "^6.1.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-scss": "^1.4.0",
+    "susy": "^2.2.12"
   }
 }
